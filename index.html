@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docent - Quiz Maken</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Login Scherm voor Docent -->
+    <div id="teacher-login">
+        <h1>Docent Inloggen</h1>
+        <form id="login-form" onsubmit="return validateLogin()">
+            <label for="teacher-password">Wachtwoord:</label>
+            <input type="password" id="teacher-password" placeholder="Wachtwoord" required>
+            <button type="submit">Inloggen</button>
+        </form>
+        <button id="set-password-button">Stel je wachtwoord in</button>
+    </div>
+
+    <!-- Docent maakt quiz -->
+    <div id="create-quiz" class="hidden">
+        <h2>Maak je Quiz</h2>
+        <select id="level">
+            <option value="basisschool">Basisschool</option>
+            <option value="middelbaar">Middelbare School</option>
+            <option value="universiteit">Universiteit</option>
+        </select>
+        <div id="questions">
+            <h3>Voeg meerkeuzevragen toe</h3>
+            <div id="question-container"></div>
+            <button onclick="addQuestion()">Vraag Toevoegen</button>
+        </div>
+        <button onclick="saveQuiz()">Opslaan</button>
+    </div>
+
+    <!-- Vraag creatie voor de docent -->
+    <div id="question-form" class="hidden">
+        <h3>Maak een vraag</h3>
+        <input type="text" id="question-text" placeholder="Vraag" required>
+        <input type="text" id="option-a" placeholder="Optie A" required>
+        <input type="text" id="option-b" placeholder="Optie B" required>
+        <input type="text" id="option-c" placeholder="Optie C" required>
+        <input type="text" id="option-d" placeholder="Optie D" required>
+        <input type="text" id="correct-answer" placeholder="Juiste Antwoord (A, B, C of D)" required>
+        <button id="save-question-button">Vraag Opslaan</button>
+    </div>
+
+    <!-- Studenten login en registratie -->
+    <div id="student-login" class="hidden">
+        <h2>Login als student</h2>
+        <form id="student-login-form">
+            <input type="text" id="student-username" placeholder="Gebruikersnaam" required>
+            <input type="password" id="student-password" placeholder="Wachtwoord" required>
+            <button type="submit">Inloggen</button>
+        </form>
+    </div>
+
+    <div id="student-register" class="hidden">
+        <h2>Registreer als student</h2>
+        <form id="student-register-form">
+            <input type="text" id="register-username" placeholder="Gebruikersnaam" required>
+            <input type="password" id="register-password" placeholder="Wachtwoord" required>
+            <button type="submit">Registreren</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
